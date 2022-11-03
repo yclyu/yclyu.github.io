@@ -1,0 +1,27 @@
+---
+title: "Yichen Lyu Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+Hello! This page is about my resume
+
+# Education
+MS in Biostatistics, Columbia University in the City of New York
+
+Bachelor of Science, University of California, Irvine
+
+
+# Professional Experience
+
+Organic Chemistry, UC Irvine
+Learning Assistant
+•	Facilitated students in Zoom breakout rooms during online discussion sessions to work on problems while answering questions on materials.
+•	Created review sheets and practice problems alongside the department’s learning assistants to ensure student success in midterms and finals.
+•	Met weekly with the Professor to review students’ assignment outcomes, discuss worksheets, and assess which policies or lectures could be improved to help students learn in an online environment.
+
+
+Return to [index](index.html)
+
