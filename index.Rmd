@@ -1,0 +1,15 @@
+---
+title: "yclyu.github.io"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+# Welcome! This is Yichen's website
+
+Here is my [resume](resume.html)
+
+Here is my [Flexdashboard](Flexdashboard.html)
+
+<img src="images/intro.jpg" style="width:75%">
