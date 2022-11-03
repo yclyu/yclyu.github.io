@@ -1,0 +1,82 @@
+---
+title: "This is a flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+
+library(p8105.datasets)
+
+knitr::opts_chunk$set(
+	echo = TRUE,
+	warning = FALSE,
+	fig.width = 8, 
+  fig.height = 6,
+  out.width = "90%"
+)
+
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A - Scatterplot
+
+```{r, echo=FALSE}
+
+instacart %>% 
+  janitor::clean_names() %>% 
+  count(aisle) %>% 
+  filter(n > 10000) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>%
+  plot_ly(
+    x = ~aisle, y = ~n, type = "scatter", mode = "markers",
+    color = ~aisle, alpha = 0.9)
+```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B - Barchart
+
+```{r, echo=FALSE}
+instacart %>% 
+  janitor::clean_names() %>% 
+  count(aisle) %>% 
+  filter(n > 10000) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>%
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis")
+```
+
+
+### Chart C - Histogram
+
+```{r, echo=FALSE}
+instacart %>% 
+  janitor::clean_names() %>% 
+   
+  filter(20 < days_since_prior_order, days_since_prior_order < 30) %>% 
+  plot_ly(x = ~days_since_prior_order, type = "histogram", colors = "viridis")
+
+```
+
+
+```{r}
+rmarkdown::render("Flexdashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
+```
