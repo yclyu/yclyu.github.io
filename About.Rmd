@@ -1,0 +1,9 @@
+---
+title: "About"
+---
+
+### About this site
+
+The website mainly consists of three pages: an introductory landing page, a resume page with description of my academic and professional experiences, and a flexdashboard page including three types of plots analyzing dataset Instacart.
+
+When creating the three plots for dataset Instacart, plotly in library plotly was used for making the plots after cleaning the dataset using functions in tidyverse package. 
